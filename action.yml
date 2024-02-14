@@ -7,7 +7,7 @@ inputs:
   access-token:
     description: "Your Foundry access token, if not provided, will default to the environment variable FOUNDRY_ACCESS_TOKEN"
     required: false
-  deployed-application-rid:
+  compute-module-rid:
     description: "The RID of the compute module"
     required: true
   container-name:
