@@ -1,0 +1,21 @@
+name: "Upgrade Compute Module"
+description: "Upgrade a container in a compute module"
+inputs:
+  foundry-url:
+    description: "The URL of the Palantir Foundry instance"
+    required: true
+  access-token:
+    description: "Your Foundry access token, if not provided, will default to the environment variable FOUNDRY_ACCESS_TOKEN"
+    required: false
+  deployed-application-rid:
+    description: "The RID of the compute module"
+    required: true
+  container-name:
+    description: "The name of the container to upgrade, you will have defined this in Foundry"
+    required: true
+  container-tag:
+    description: "The tag of the container to upgrade"
+    required: true
+runs:
+  using: "node20"
+  main: "dist/index.js"
