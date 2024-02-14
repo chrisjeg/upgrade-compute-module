@@ -54,7 +54,7 @@ async function upgradeComputeModule() {
       `🔁 Upgrading container ${containerName} to version ${containerTag}`
     );
     container.image.tagOrDigest.tag = containerTag;
-    await axios.post(deployedAppApi, currentModule, {
+    await axios.put(deployedAppApi, currentModule, {
       headers: {
         Authorization: `Bearer ${accessToken}`,
       },
@@ -63,7 +63,7 @@ async function upgradeComputeModule() {
       `✅ Container ${containerName} upgraded to version ${containerTag}`
     );
   } catch (error) {
-    core.setFailed(`🔒 Failed to get token: ${error.message}`);
+    core.setFailed(`❌ ${error.message}`);
   }
 }
 
