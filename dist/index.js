@@ -27083,7 +27083,7 @@ function upgradeComputeModule() {
             core.info(`🔍 Found existing container ${containerName} at version ${container.image.tagOrDigest.tag}`);
             core.info(`🔁 Upgrading container ${containerName} to version ${containerTag}`);
             container.image.tagOrDigest.tag = containerTag;
-            yield axios_1.default.post(deployedAppApi, currentModule, {
+            yield axios_1.default.put(deployedAppApi, currentModule, {
                 headers: {
                     Authorization: `Bearer ${accessToken}`,
                 },
@@ -27091,7 +27091,7 @@ function upgradeComputeModule() {
             core.info(`✅ Container ${containerName} upgraded to version ${containerTag}`);
         }
         catch (error) {
-            core.setFailed(`🔒 Failed to get token: ${error.message}`);
+            core.setFailed(`❌ ${error.message}`);
         }
     });
 }
