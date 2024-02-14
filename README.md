@@ -19,7 +19,7 @@ The action requires the following inputs:
 - `compute-module-rid`: The resource identifier (RID) of the compute module to be upgraded. (Required)
 - `container-name`: The name of the container within the compute module that needs to be upgraded. (Required)
 - `container-tag`: The new tag of the container to which the compute module will be upgraded. (Required)
-- `access-token`: The access token used for authentication with the Foundry API. This can also be set as an environment variable `FOUNDRY_ACCESS_TOKEN`. (Optional)
+- `access-token`: The access token used for authentication with the Foundry API. This can also be set as an environment variable `FOUNDRY_ACCESS_TOKEN`. (Optional). If you use chrisjeg/auth-to-foundry, you don't need this.
 
 ## Environment Variables
 
@@ -37,7 +37,6 @@ To use this action in your workflow, add a step that uses this action and specif
     compute-module-rid: "rid-of-compute-module"
     container-name: "example-container"
     container-tag: "v2.0.1"
-    access-token: ${{ secrets.FOUNDRY_ACCESS_TOKEN }}
 ```
 
 ## Handling Failures
@@ -54,4 +53,4 @@ Contributions to this action are welcome. Before contributing, please open an is
 
 ## License
 
-Specify the license under which this action is provided. Common choices include MIT, Apache 2.0, etc.
+This project is licensed under the MIT License - see the LICENSE file for details.
